@@ -1,5 +1,5 @@
 #modules
-from PyQt5.QtWidgets import QApplication, QWidget, QTextEdit, QComboBox, QPushButton, QLabel, QHBoxLayout, QVBoxLayout, QGridLayout
+from PyQt5.QtWidgets import QApplication, QWidget, QTextEdit, QPushButton, QHBoxLayout, QVBoxLayout, QGridLayout
 from PyQt5.QtCore import Qt
 import pandas as pd
 import numpy as np
