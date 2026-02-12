@@ -14,6 +14,8 @@ button_gray = """
         font-size: 30pt;
         background-color: #787C7E;
         color: white;
+        border: 2px solid #AAAAAA;
+        border-radius: 5px;
     }
 """
 
@@ -22,6 +24,8 @@ button_green = """
         font-size: 30pt;
         background-color: #6AAA64;
         color: white;
+        border: 2px solid #AAAAAA;
+        border-radius: 5px;
     }
 """
 
@@ -30,12 +34,14 @@ button_yellow = """
         font-size: 30pt;
         background-color: #C9B458;
         color: white;
+        border: 2px solid #AAAAAA;
+        border-radius: 5px;
     }
 """
 
 word_box = """
     QTextEdit {
-        font-size: 10pt;
+        font-size: 20pt;
         padding: 20px;
         border: 2px solid #AAAAAA;
         border-radius: 5px;

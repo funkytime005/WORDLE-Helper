@@ -3,10 +3,19 @@ from PyQt5.QtWidgets import QApplication, QWidget, QTextEdit, QPushButton, QHBox
 from PyQt5.QtCore import Qt
 import pandas as pd
 import numpy as np
+import os, sys
 from styles import *
 from search import *
 
-#Class
+def resource_path(relative_path):
+    """ Get absolute path to resource. Works for PyInstaller when packaging."""
+    try:
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
+
+# Class
 class Wordle_App(QWidget):
     def __init__(self):
         super().__init__()
@@ -15,7 +24,8 @@ class Wordle_App(QWidget):
 
         self.color_state = np.ones((6,5), dtype=int) * -1
         self.word_pos = 0
-        self.word_set = pd.read_csv('/home/jkuri005/PROJECTS/Wordle/upper_wordle_csv.csv', index_col=0)
+        csv_file_path = resource_path('upper_wordle_csv.csv')
+        self.word_set = pd.read_csv(csv_file_path, index_col=0)
 
         self.cut_word_set = self.word_set.copy()
 
@@ -76,8 +86,13 @@ class Wordle_App(QWidget):
 
 
     def settings(self):
-        self.setWindowTitle('Wordle Suggestor')
-        self.setGeometry(2250,250,1200,1000)
+        self.setWindowTitle('WORDLE Word Suggestor')
+        
+        # Center the window every time
+        window_geometry = self.frameGeometry()
+        screen_center = QApplication.primaryScreen().availableGeometry().center()
+        window_geometry.moveCenter(screen_center)
+        self.move(window_geometry.topLeft())
 
     def matrix_button_handler(self, row, col):
         """
