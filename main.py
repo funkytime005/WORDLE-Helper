@@ -329,8 +329,9 @@ class Wordle_App(QWidget):
                             # print("  yellow > green")
                             err_string += f"The letter {cur_letter} in column {col+1} became green in the same column it was yellow.\n"
                     # gray turns green
-                    if cur_letter in gray_letters and cur_letter not in gray_added:
+                    if (cur_letter in gray_letters and cur_letter not in gray_added) and (green_letters[col] != cur_letter):
                         # legal if it was made gray this word. means no duplicates. if it turns gray later in the word, handled in green > gray
+                        # legal if it was already established as green
                         # print("  gray > green")
                         err_string += f"The letter {cur_letter} in row {row+1} became green when it was previously gray.\n"
 
