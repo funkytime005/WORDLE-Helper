@@ -38,7 +38,7 @@ Leading to a solution in 3 guesses! Not bad!
 
 
 ## The Files
-All files are annotated that the thought process in their development is explained as well as a basic understanding of what each portion achieves is conveyed.
+All files are annotated such that the thought process in their development is explained as well as a basic understanding of what each portion achieves is conveye.
 ### main.py
 The central python file which is referenced to run the program unpackaged. Holds the setup of the UI, button event resolutions, as well as the error-checking algorithms. Since the error-checking algorithm requires interaction with front-end UI elements, it has not been seperated into its own file.
 
